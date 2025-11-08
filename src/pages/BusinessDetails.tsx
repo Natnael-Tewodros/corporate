@@ -1,5 +1,6 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import {
   ArrowLeft,
   ArrowRight,
@@ -10,7 +11,6 @@ import {
   CreditCard,
   Smartphone,
 } from "lucide-react";
-import { ContactForm } from "@/components/ContactForm";
 
 const businessData = {
   manufacturing: {
@@ -246,7 +246,23 @@ const BusinessDetails = () => {
                     Interested in learning more about our {business.title} division? 
                     Send us a message and we'll get back to you soon.
                   </p>
-                  <ContactForm businessName={business.title} />
+                  <Button 
+                    onClick={() => {
+                      navigate('/');
+                      // Scroll to contact section after navigation
+                      setTimeout(() => {
+                        const contactSection = document.getElementById('contact');
+                        if (contactSection) {
+                          contactSection.scrollIntoView({ behavior: 'smooth' });
+                        }
+                      }, 100);
+                    }}
+                    className="w-full bg-blue-600 hover:bg-blue-700 text-white"
+                    size="lg"
+                  >
+                    Contact Us
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
                 </CardContent>
               </Card>
             </div>

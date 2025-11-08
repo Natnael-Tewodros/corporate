@@ -81,11 +81,23 @@ const Businesses = () => {
           {businessSectors.map((sector) => (
             <div 
               key={sector.id}
-              onClick={() => navigate(`/business/${sector.id}`)}
-              className="group relative bg-white p-8 rounded-2xl border border-gray-100 hover:border-blue-100 transition-all duration-500 ease-in-out overflow-hidden shadow-sm hover:shadow-xl cursor-pointer transform hover:-translate-y-1 hover:scale-[1.02]"
+              data-business-id={sector.id}
+              onClick={(e) => {
+                e.preventDefault();
+                navigate(`/business/${sector.id}`);
+              }}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  navigate(`/business/${sector.id}`);
+                }
+              }}
+              role="button"
+              tabIndex={0}
+              className="group relative bg-white p-8 rounded-2xl border border-gray-100 hover:border-blue-100 transition-all duration-500 ease-in-out overflow-hidden shadow-sm hover:shadow-xl cursor-pointer transform hover:-translate-y-1 hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
             >
               {/* Animated background gradient */}
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
                    style={{
                      background: `linear-gradient(135deg, ${sector.color.includes('blue') ? 'rgba(236, 242, 255, 0.6)' : 
                        sector.color.includes('emerald') ? 'rgba(236, 253, 245, 0.6)' :
@@ -103,7 +115,7 @@ const Businesses = () => {
               ></div>
               
               {/* Decorative elements */}
-              <div className="absolute -right-6 -bottom-6 w-32 h-32 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700"
+              <div className="absolute -right-6 -bottom-6 w-32 h-32 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"
                    style={{
                      background: `radial-gradient(circle, ${sector.color.split(' ')[0].replace('from-', '')} 0%, transparent 70%)`
                    }}

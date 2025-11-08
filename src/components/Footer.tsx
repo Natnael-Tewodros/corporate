@@ -49,27 +49,27 @@ const Footer = () => {
               <div className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-blue-400 mt-0.5 flex-shrink-0" />
                 <div>
-                  <p className="font-medium">Head Office</p>
-                  <p className="text-sm text-gray-300">123 Business Avenue</p>
-                  <p className="text-sm text-gray-300">Addis Ababa, Ethiopia</p>
+                  <p className="font-medium text-primary-foreground">Head Office</p>
+                  <p className="text-sm text-primary-foreground/90">123 Business Avenue</p>
+                  <p className="text-sm text-primary-foreground/90">Addis Ababa, Ethiopia</p>
                 </div>
               </div>
               
               <div className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-blue-400 flex-shrink-0" />
                 <div>
-                  <p className="font-medium">Call Us</p>
-                  <p className="text-sm text-gray-300">+251 911-09-69-58</p>
-                  <p className="text-sm text-gray-300">+251 941-35-71-50</p>
+                  <p className="font-medium text-primary-foreground">Call Us</p>
+                  <p className="text-sm text-primary-foreground/90">+251 911-09-69-58</p>
+                  <p className="text-sm text-primary-foreground/90">+251 941-35-71-50</p>
                 </div>
               </div>
               
               <div className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-blue-400 flex-shrink-0" />
                 <div>
-                  <p className="font-medium">Email Us</p>
-                  <p className="text-sm text-gray-300">natitedy7@gmail.com</p>
-                  <p className="text-sm text-gray-300">support@corporate-group.com</p>
+                  <p className="font-medium text-primary-foreground">Email Us</p>
+                  <p className="text-sm text-primary-foreground/90">natitedy7@gmail.com</p>
+                  <p className="text-sm text-primary-foreground/90">support@corporate-group.com</p>
                 </div>
               </div>
             </div>
@@ -82,7 +82,7 @@ const Footer = () => {
                   href={item.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-white transition-colors"
+                  className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
                   aria-label={item.label}
                 >
                   <item.icon className="h-5 w-5" />
